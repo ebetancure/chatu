@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
-
 import { AppComponent } from './app.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+
+
+
 
 
 
@@ -20,6 +20,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     RegistroUsuarioComponent,
     InicioSesionComponent,
     PerfilComponent,
+    
     
   ],
   imports: [
@@ -32,4 +33,5 @@ import { PerfilComponent } from './components/perfil/perfil.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
