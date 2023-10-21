@@ -7,7 +7,7 @@
                     <form [formGroup]="regisForm" (ngSubmit)="registro()">
                         <div class="form-group">
                             <label for="id">Documento de identidad</label>
-                            <input type="number" formControlName="id"
+                            <input type="text" formControlName="id"
                                 class="form-control" id="id" placeholder="">
                         </div>
                         <div class="text-danger" 
@@ -43,7 +43,7 @@
                         </div>
                         <br/>
                         <div>
-                            <button type="submit" class="btn btn-info float-end">Registrate</button>
+                            <button type="submit" [disabled]="regisForm.invalid" class="btn btn-info float-end">Registrate</button>
                             <button type="button" class="btn btn-secondary float-start" routerLink="/">Iniciar Sesion</button>
                         </div>
                     </form>
