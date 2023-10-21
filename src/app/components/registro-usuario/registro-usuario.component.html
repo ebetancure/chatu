@@ -1,0 +1,54 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="titulo">REGISTRO</h5>
+                    <form [formGroup]="regisForm" (ngSubmit)="registro()">
+                        <div class="form-group">
+                            <label for="id">Documento de identidad</label>
+                            <input type="number" formControlName="id"
+                                class="form-control" id="id" placeholder="">
+                        </div>
+                        <div class="text-danger" 
+                            *ngIf="regisForm.get('id')?.hasError('required')&&regisForm.get('id')?.touched">
+                            <span>Documento de identidad es <strong>es obligatorio</strong></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" formControlName="nombre"
+                                class="form-control" id="username" placeholder="">
+                        </div>
+                        <div class="text-danger" 
+                            *ngIf="regisForm.get('nombre')?.hasError('required')&&regisForm.get('nombre')?.touched">
+                            <span>Nombre y apellido es <strong>es obligatorio</strong></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo</label>
+                            <input type="email" formControlName="correo" 
+                                class="form-control" id="email" placeholder="">
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="regisForm.get('correo')?.hasError('email')">
+                            <span>Escriba el correo <strong>Correctamente</strong></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contrasena">Contraseña</label>
+                            <input type="password" formControlName="contrasena"
+                                class="form-control" id="contrasena" placeholder="">
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="regisForm.get('contrasena')?.hasError('minlength')">
+                            <span>Minimo <strong>8 caracteres</strong></span>
+                        </div>
+                        <br/>
+                        <div>
+                            <button type="submit" class="btn btn-info float-end">Registrate</button>
+                            <button type="button" class="btn btn-secondary float-start" routerLink="/">Iniciar Sesion</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
