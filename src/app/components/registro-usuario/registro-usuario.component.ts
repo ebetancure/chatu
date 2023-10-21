@@ -36,7 +36,7 @@ export class RegistroUsuarioComponent {
     }
     console.log(USUARIO);
     this.toastr.success('El usurio fue registrado con exito!', 'Usurio registrado!');
-    this.router.navigate(['/perfil'])
+    this.router.navigate(['/inicio-sesion'])
   }
   
 }
