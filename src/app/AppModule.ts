@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from "@angular/common/http";
+
+
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
@@ -28,6 +31,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot()
   ],
   providers: [],
