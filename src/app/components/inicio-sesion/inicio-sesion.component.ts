@@ -14,10 +14,9 @@ export class InicioSesionComponent {
   usuarioForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private router: Router,
-              private authService: AuthService) {
+    private router: Router,
+    private authService: AuthService) {
     this.usuarioForm = this.fb.group({
-      nombre: ['', Validators.required],
       correo: ['', Validators.email],
       contrasena: ['', [Validators.minLength(8)]],
     })
@@ -38,10 +37,10 @@ export class InicioSesionComponent {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private']);
+          this.router.navigate(['/pagina-p']);
         },
         err => console.log(err)
       )
-    this.router.navigate(['/perfil'])
+
   }
 }

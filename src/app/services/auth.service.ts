@@ -9,15 +9,15 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private URL = 'http://localhost:3200/api';
+  private URL = 'http://localhost:3000/api';
   constructor(private http: HttpClient, private router: Router) { }
 
   signUpUser(usuario: Usuario): Observable<any> { // Usa la clase Usuario como tipo para el parámetro
-    return this.http.post<any>(this.URL + '/registro', usuario);
+    return this.http.post<any>(this.URL + '/signup', usuario);
   }
 
   signInUser(usuario: Usuario): Observable<any> { // También usa la clase Usuario como tipo aquí
-    return this.http.post<any>(this.URL + '/inicioSesion', usuario);
+    return this.http.post<any>(this.URL + '/signin', usuario);
   }
 
   loggedIn() {

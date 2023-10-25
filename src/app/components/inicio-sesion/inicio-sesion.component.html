@@ -5,11 +5,6 @@
                 <div class="card-body">
                     <h5 class="titulo">INICIO SESIÓN</h5>
                     <form [formGroup]="usuarioForm" (ngSubmit)="iniciarSesion()">
-                        <div class="form-group mt-1">
-                            <label for="nombre">Nombre y Apellido</label>
-                            <input type="text" formControlName="nombre" 
-                                class="form-control"id="nombre" placeholder="">
-                        </div>
                         <div class="text-danger" 
                             *ngIf="usuarioForm.get('nombre')?.hasError('required')&&usuarioForm.get('nombre')?.touched">
                             <span>Nombre y apellido es <strong>es obligatorio</strong></span>
@@ -34,7 +29,7 @@
                         </div>
                         <br/>
                         <div>
-                            <button type="submit" [disabled]="usuarioForm.invalid" class="btn btn-info float-end" routerLink="/pagina-p">Iniciar Sesión</button>
+                            <button type="submit" [disabled]="usuarioForm.invalid" class="btn btn-info float-end">Iniciar Sesión</button>
                             <button type="button" class="btn btn-secondary float-start" routerLink="/registro-usuario">Registrate</button>
                         </div>
                     </form>

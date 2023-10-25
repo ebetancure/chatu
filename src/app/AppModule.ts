@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
+import { AuthGuard } from "./auth.guard";
 
 
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
@@ -34,7 +35,9 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     HttpClientModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

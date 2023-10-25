@@ -4,12 +4,14 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { PaginaPComponent } from './components/pagina-p/pagina-p.component';
+import { AuthGuard } from "./auth.guard";
+
 
 const routes: Routes = [
   { path: '', component: InicioSesionComponent },
   { path: 'registro-usuario', component: RegistroUsuarioComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: 'pagina-p', component: PaginaPComponent },
+  { path: 'pagina-p', component: PaginaPComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

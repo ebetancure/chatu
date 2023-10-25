@@ -41,7 +41,7 @@ export class RegistroUsuarioComponent {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private']);
+          this.router.navigate(['']);
         },
         err => console.log(err)
       )
